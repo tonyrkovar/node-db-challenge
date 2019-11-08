@@ -80,6 +80,18 @@ router.get('/:id/tasks', (req, res) => {
         })
 })
 
+router.post('/:id/tasks', (req, res) => {
+    const newTask = req.body
+    const { id } = req.params
+    db.addTask(id, newTask)
+        .then(task => {
+            res.status(200).json(task)
+        })
+        .catch(err => {
+            res.status(400).json({ ERROR: `There was an error: ${err}` })
+        })
+})
+
 // function convertCompleted(req, res, next) {
 //     req.map(newProj => {
 //         // console.log(newProj)
