@@ -31,16 +31,12 @@ router.get('/', (req, res) => {
             res.status(200).json(proj.map(newProj => {
                 if (newProj.completed === 0) {
                     return {
-                        id: newProj.id,
-                        project_name: newProj.project_name,
-                        project_desc: newProj.project_desc,
+                        ...newProj,
                         completed: false
                     }
                 } else {
                     return {
-                        id: newProj.id,
-                        project_name: newProj.project_name,
-                        project_desc: newProj.project_desc,
+                        ...newProj,
                         completed: true
                     }
                 }
@@ -63,7 +59,25 @@ router.post('/', (req, res) => {
 })
 
 router.get('/:id/tasks', (req, res) => {
-
+    db.getTasks(req.params.id)
+        .then(task => {
+            res.status(200).json(task.map(newTask => {
+                if (newTask.completed === 0) {
+                    return {
+                        ...newTask,
+                        completed: false,
+                    }
+                } else {
+                    return {
+                        ...newTask,
+                        completed: true,
+                    }
+                }
+            }))
+        })
+        .catch(err => {
+            res.status(400).json({ ERROR: `There was an error: ${err}` })
+        })
 })
 
 // function convertCompleted(req, res, next) {
