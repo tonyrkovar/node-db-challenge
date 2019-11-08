@@ -11,7 +11,6 @@ exports.seed = function (knex) {
         { resource_name: 'Mop', resource_desc: 'To clean the kitchen', project_id: '2' },
         { resource_name: 'Vaccum', resource_desc: 'to pick up that darn dog hair ', project_id: '2' },
         { resource_name: 'Spotify', resource_desc: 'so much music', project_id: '3' },
-
       ]);
     });
 };
