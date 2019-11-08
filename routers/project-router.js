@@ -92,27 +92,5 @@ router.post('/:id/tasks', (req, res) => {
         })
 })
 
-// function convertCompleted(req, res, next) {
-//     req.map(newProj => {
-//         // console.log(newProj)
-//         if (newProj.completed === 0) {
-//             res.status(200).json({
-//                 id: newProj.id,
-//                 project_name: newProj.project_name,
-//                 project_desc: newProj.project_desc,
-//                 completed: false
-//             })
-//         } else {
-//             res.status(200).json({
-//                 id: newProj.id,
-//                 project_name: newProj.project_name,
-//                 project_desc: newProj.project_desc,
-//                 completed: true
-//             })
-//         }
-//         next()
-//     })
-// }
-
 
 module.exports = router;

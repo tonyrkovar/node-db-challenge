@@ -52,7 +52,7 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
 
-  # multiple foreign keys across different tables? 
+  # You would need multiple mutual fields to be accessed in both of the tables you are working on IE: if you had a list of musicians and genres there would most likely have musicians and multiple genres and multipls genres under the musician for a super simpled example. 
 
 ## Minimum Viable Product
 
